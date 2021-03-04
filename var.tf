@@ -3,15 +3,6 @@ variable "region" {
   description = "Main region"
 }
 
-variable "access_key" {
-  default = "AKIA3PHJCLJKYAJKKBN7"
-}
-
-variable "secret_key" {
-  default = "26Dji+QA3afH4hvw1KP9UPXv8Ti8tKBEcKXApxbP"
-}
-
-
 variable "ami_azm-lnx" {
   default = "ami-09246ddb00c7c4fef"
 }
