@@ -20,7 +20,7 @@ variable "key" {
 
 variable "subnet-public" {
   type    = string
-  default = "10.150.0.0/22"
+  default = "10.150.1.0/24"
 }
 
 variable "subnet-private-b" {

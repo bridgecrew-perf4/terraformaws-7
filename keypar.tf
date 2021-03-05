@@ -1,4 +1,4 @@
 resource "aws_key_pair" "teste" {
   key_name   = var.key
-  public_key = #"cole sua key aqui"
+  public_key = #"Insira sua chave SSH aqui parça"
 }
