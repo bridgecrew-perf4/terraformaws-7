@@ -1,16 +1,62 @@
 variable "region" {
-  default     = "us-east-2"
-  description = "Main region"
+  type    = string
+  default = "us-east-2"
 }
 
 variable "ami_azm-lnx" {
+  type    = string
   default = "ami-09246ddb00c7c4fef"
 }
 
-#variable "ips" {
-#  type = "list"
-#  default = ["684D:1111:222:3333:4444:5555:6:77"]
-#}
+variable "type-default" {
+  type    = string
+  default = "t2.micro"
+}
+
+variable "key" {
+  type    = string
+  default = "teste-key"
+}
+
+variable "subnet-public" {
+  type    = string
+  default = "10.150.0.0/22"
+}
+
+variable "subnet-private-b" {
+  type    = string
+  default = "10.150.2.0/24"
+}
+
+variable "subnet-private-c" {
+  type    = string
+  default = "10.150.3.0/24"
+}
+
+variable "public-zone-a" {
+  type    = string
+  default = "us-east-2a"
+}
+
+variable "private-zone-b" {
+  type    = string
+  default = "us-east-2b"
+}
+
+variable "private-zone-c" {
+  type    = string
+  default = "us-east-2c"
+}
+
+variable "public_ip" {
+  type    = bool
+  default = "true"
+}
+
+variable "subnet-vcp" {
+  type    = string
+  default = "10.150.0.0/22"
+}
 
 variable "tags" {
   #type = "map"
@@ -20,27 +66,3 @@ variable "tags" {
   }
 }
 
-variable "region_number" {
-  # Arbitrary mapping of region name to number to use in
-  # a VPC's CIDR prefix.
-  default = {
-    us-east-1      = 1
-    us-west-1      = 2
-    us-west-2      = 3
-    eu-central-1   = 4
-    ap-northeast-1 = 5
-    us-east-2      = 6
-  }
-}
-
-variable "az_number" {
-  # Assign a number to each AZ letter used in our configuration
-  default = {
-    a = 1
-    b = 2
-    c = 3
-    d = 4
-    e = 5
-    f = 6
-  }
-}

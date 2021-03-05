@@ -1,6 +1,6 @@
 # Create a VPC
 resource "aws_vpc" "VPC-EKS" {
-  cidr_block = "10.150.0.0/22"
+  cidr_block = var.subnet-vcp
 
   instance_tenancy = "default"
 
@@ -14,9 +14,9 @@ resource "aws_vpc" "VPC-EKS" {
 
 resource "aws_subnet" "subnet1" {
   vpc_id                  = aws_vpc.VPC-EKS.id
-  cidr_block              = "10.150.1.0/24"
-  availability_zone       = "us-east-2a"
-  map_public_ip_on_launch = "true"
+  cidr_block              = var.subnet-public
+  availability_zone       = var.public-zone-a
+  map_public_ip_on_launch = var.public_ip
   depends_on = [
     aws_vpc.VPC-EKS,
   ]
@@ -27,8 +27,8 @@ resource "aws_subnet" "subnet1" {
 
 resource "aws_subnet" "subnet2" {
   vpc_id            = aws_vpc.VPC-EKS.id
-  cidr_block        = "10.150.2.0/24"
-  availability_zone = "us-east-2b"
+  cidr_block        = var.subnet-private-b
+  availability_zone = var.private-zone-b
   #map_public_ip_on_launch = "true"
   depends_on = [
     aws_vpc.VPC-EKS,
@@ -40,9 +40,9 @@ resource "aws_subnet" "subnet2" {
 }
 
 resource "aws_subnet" "subnet3" {
-  vpc_id     = aws_vpc.VPC-EKS.id
-  cidr_block = "10.150.3.0/24"
-
+  vpc_id            = aws_vpc.VPC-EKS.id
+  cidr_block        = var.subnet-private-c
+  availability_zone = var.private-zone-c
   tags = {
     Name = "Subnet-EKS-C"
   }

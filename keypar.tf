@@ -1,4 +1,4 @@
 resource "aws_key_pair" "teste" {
-  key_name   = "teste-key"
-  public_key = "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDGqzVKIXk8/H5oXvLUvKoul4sQtx1xEsetuattssqGCz/vIKa8ZYGfvanBUGc7lU/X18dnc4xSKKE9/Is+oTee/FSccBTdqRfjEETgdN6qBJJjqO2SPuZowiYEUNcWrClNIdJREZxL46qsqDeIWR1oEJxS7rYaJovp8e4c2k+efZiAL91Zv6Uqw3HkUR6xayUmOmscdNQ990E0h/v7fl+LSknk95h0RIxD9mofxurPB1NV0bku0Vf7T1rchJs4VGdBsMX1R9tMLVAsJMdVpQJ8DWuYhtQsG/l50Dhu3/OLG1Xyq9LKRPbci2hdqFRo/cSXI1CIEO56IxipHeL+OspbQ9I72x4B7OJ5s8VP2hUIS2zNLHlhYcYWwWtinh2a9uODDMoJneJ85ZlMVRaLGBWvl9NpZ8X8rHWlotJQZCzW5UVPS9RCebHwvWVtg5Qfztd/AcC3/bYhJiEPiFP27TR7v6RFlxJ+W1vbbwIqpgLE1HWRA9xVG2pQ5dVmC7S4Va0= root@cicdserver"
+  key_name   = var.key
+  public_key = #"cole sua key aqui"
 }
